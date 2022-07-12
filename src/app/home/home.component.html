@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div *ngIf="!registerMode" style="text-align: center;">
+    <h1>Find your match</h1>
+    <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
+    <div class="text-center">
+      <but (click)="registerToggle()" class="btn btn-primary btn-lg mr-2" style="margin-right: 4px">Register</but>
+      <but class="btn btn-info btn-lg" style="color: white">Learn more</but>
+    </div>
+  </div>
+
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+      <div class="text-center col-4">
+<!--    { [usersFromHomeComponent]="users" } sending data for register component (register component is the child)-->
+<!--    { (cancelRegister)="cancelRegisterModel($event)" } sending data from register component to home component (child to parent communication)-->
+        <app-register (cancelRegister)="cancelRegisterModel($event)"></app-register>
+      </div>
+    </div>
+  </div>
+</div>
